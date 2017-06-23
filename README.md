@@ -1,8 +1,6 @@
-## How to run this application
+## How to create your own Ionic application
 
 
-
-To create your application use 
 
 ### With the Ionic CLI:
 
@@ -36,6 +34,8 @@ $ ionic cordova run ios
 ```
 
 Substitute ios for android if not on a Mac.
+
+### How to run this application
 
 To run this application in your local machine use the following step.
 
