@@ -1,0 +1,28 @@
+<ion-content padding>
+  <form [formGroup]="form" (submit)="onSubmit();">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Debit card number<span *ngIf="!form.controls['debitCard'].valid">*</span></ion-label>
+        <ion-input type="text" formControlName="debitCard" maxlength="16"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Name on card<span *ngIf="!form.controls['name'].valid">*</span></ion-label>
+        <ion-input type="text"  formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>CVV<span *ngIf="!form.controls['cvv'].valid">*</span></ion-label>
+        <ion-input maxlength="4" type="password" formControlName="cvv"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>ExpiryDate<span *ngIf="!form.controls['expiryDate'].valid">*</span>
+        </ion-label>
+        <ion-datetime displayFormat="DD/YYYY" min="{{minDate}}" max="{{maxDate}}"  formControlName="expiryDate" pickerFormat="DD/YYYY"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked *ngIf="package.bonus">You got bonus of  <span>{{package.bonus.price}}</span>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <button type="submit" [disabled]="!form.valid" ion-button block>Pay {{package.price}}</button>
+  </form>
+</ion-content>

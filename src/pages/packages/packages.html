@@ -1,0 +1,48 @@
+<!--
+  Basic card setup for adding package
+-->
+
+<ion-card>
+  <ion-card-header>
+    Select a package or enter amount
+  </ion-card-header>
+  <ion-card-content >
+    <form novalidate [formGroup]="packageForm">
+      <ion-list formControlName="selectedPackage" radio-group style="display:flex;">
+        <div *ngFor="let package of packages" class="box">
+          <ion-item class="package-box">
+            <ion-label>
+              <div class="badge-bonus">
+                <div style="font-size:8px;">{{package.bonus.label}}</div>
+                <div>
+                  <span style="position:relative;font-size:9px">Rs</span>
+                  <span style="position:relative;font-size:14px">{{package.bonus.price}}</span>
+                </div>
+              </div>
+              <div style="position:relative;font-size:14px">{{package.price}}</div>
+            </ion-label>
+            <ion-radio value="{{package.price}}" (ionSelect) = "onPackageSelection(package)" checked="{{selectedPackage.price === package.price}}" ></ion-radio>
+          </ion-item>
+        </div>
+      </ion-list>
+      <ion-list>
+        <div class="box">
+
+          <ion-item class="package-box">
+            <ion-label stacked>Enter amount</ion-label>
+            <ion-input formControlName="customPackage" value="{{selectedPackage.price}}" type="number" (change)="onCustomPackage();"></ion-input>
+          </ion-item>
+        </div>
+        <div class="box">
+          <ion-item class="package-box">
+            <ion-label stacked>Coupon</ion-label>
+            <ion-input formControlName="couponCode" type="text" (change)="applyCoupon($event)"></ion-input>
+          </ion-item>
+        </div>
+      </ion-list>
+      <div class="box">
+        <button ion-button block [disabled]="pending || !packageForm.valid" (click)="onContinueButtonClick();">Continue</button>
+      </div>
+    </form>
+  </ion-card-content>
+</ion-card>

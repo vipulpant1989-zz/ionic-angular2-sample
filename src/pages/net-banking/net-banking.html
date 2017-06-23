@@ -1,0 +1,16 @@
+
+<ion-content padding>
+  <form [formGroup]="formGroup" (submit)="onSubmit()">
+  <ion-list>
+    <ion-item>
+      <ion-label>Select your bank</ion-label>
+      <ion-select formControlName="selectedBank">
+        <ion-option *ngFor="let bank of banks" value="{{bank}}">{{bank}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div class="box">
+    <button ion-button block [disabled]="!formGroup.valid">Pay {{amount}}</button>
+  </div>
+  </form>
+</ion-content>

@@ -1,0 +1,23 @@
+page-packages {
+
+}
+
+.package-box {
+
+  display: inline-block;
+  background: rgba(3, 47, 108, 0.76);
+  color: #fff;
+}
+.item-inner{
+  display:inline-block;
+}
+.box{
+  margin:2px;
+  box-shadow:2px;
+}
+.badge-bonus{
+  text-align:center;
+  display:inline-block;
+  background:rgb(254,193,46);
+  margin-top:0px;
+}
