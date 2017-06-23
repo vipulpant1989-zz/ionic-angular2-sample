@@ -5,7 +5,7 @@ How to run<br>
 then<br>
   Go to directory<br>
   run npm install<br>
-  use command ionic serve -l to run the application in default browser on http://localhost:8100/ionic-lab 
+  use command ionic serve -l to run the application in default browser on http://localhost:8100/ionic-lab<br> 
   run npm start which will start running express server on http://localhost:9000
   
   For creating new pages<br>
