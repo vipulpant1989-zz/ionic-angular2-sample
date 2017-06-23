@@ -63,7 +63,13 @@ $ ionic cordova run andriod
 $ ionic cordova run windows
 ```
 
-**There is node express server to serve some api calls to run it simple type npm start.**
+**There is node express server to serve some api calls to run it simple type **
+
+```bash
+npm start
+```
+
+This will start an express server.
 
 
 -------------------------
